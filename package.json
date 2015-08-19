@@ -1,7 +1,7 @@
 {
   "name": "torrent-piece",
   "description": "Torrent piece abstraction",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "author": {
     "name": "Feross Aboukhadijeh",
     "email": "feross@feross.org",
@@ -10,8 +10,7 @@
   "bugs": {
     "url": "https://github.com/feross/torrent-piece/issues"
   },
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
     "standard": "^5.0.0",
     "tape": "^4.0.0",
