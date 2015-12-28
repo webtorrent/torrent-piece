@@ -56,7 +56,7 @@ Piece.prototype.cancel = function (i) {
 
 Piece.prototype.cancelRemaining = function (i) {
   if (!this.init()) return
-  this._reservations = i-1
+  this._reservations = i - 1
 }
 
 Piece.prototype.get = function (i) {
@@ -67,13 +67,13 @@ Piece.prototype.get = function (i) {
 Piece.prototype.set = function (i, data, source) {
   if (!this.init()) return false
   var len = data.length
-  var blocks = Math.ceil(len/BLOCK_LENGTH)
-  for(j = 0; j < blocks; j++) {
-    if (!this._buffer[i+j]) {
-      var offset = j*BLOCK_LENGTH
-      var splitData = data.slice(offset, offset+BLOCK_LENGTH)
+  var blocks = Math.ceil(len / BLOCK_LENGTH)
+  for (var j = 0; j < blocks; j++) {
+    if (!this._buffer[i + j]) {
+      var offset = j * BLOCK_LENGTH
+      var splitData = data.slice(offset, offset + BLOCK_LENGTH)
       this._buffered++
-      this._buffer[i+j] = splitData
+      this._buffer[i + j] = splitData
       this.missing -= splitData.length
       if (this.sources.indexOf(source) === -1) {
         this.sources.push(source)
