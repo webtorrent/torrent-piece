@@ -56,7 +56,7 @@ Piece.prototype.cancel = function (i) {
 
 Piece.prototype.cancelRemaining = function (i) {
   if (!this.init()) return
-  this._reservations = i - 1
+  this._reservations = i
 }
 
 Piece.prototype.get = function (i) {
