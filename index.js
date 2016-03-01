@@ -24,6 +24,10 @@ Piece.prototype.chunkLength = function (i) {
   return i === this._chunks - 1 ? this._remainder : BLOCK_LENGTH
 }
 
+Piece.prototype.chunkLengthRemaining = function (i) {
+  return this.length - (i * BLOCK_LENGTH)
+}
+
 Piece.prototype.chunkOffset = function (i) {
   return i * BLOCK_LENGTH
 }
@@ -35,9 +39,24 @@ Piece.prototype.reserve = function () {
   return -1
 }
 
+Piece.prototype.reserveRemaining = function () {
+  if (!this.init()) return -1
+  if (this._reservations < this._chunks) {
+    var min = this._reservations
+    this._reservations = this._chunks
+    return min
+  }
+  return -1
+}
+
 Piece.prototype.cancel = function (i) {
   if (!this.init()) return
   this._cancellations.push(i)
+}
+
+Piece.prototype.cancelRemaining = function (i) {
+  if (!this.init()) return
+  this._reservations = i - 1
 }
 
 Piece.prototype.get = function (i) {
@@ -47,12 +66,18 @@ Piece.prototype.get = function (i) {
 
 Piece.prototype.set = function (i, data, source) {
   if (!this.init()) return false
-  if (!this._buffer[i]) {
-    this._buffered++
-    this._buffer[i] = data
-    this.missing -= data.length
-    if (this.sources.indexOf(source) === -1) {
-      this.sources.push(source)
+  var len = data.length
+  var blocks = Math.ceil(len / BLOCK_LENGTH)
+  for (var j = 0; j < blocks; j++) {
+    if (!this._buffer[i + j]) {
+      var offset = j * BLOCK_LENGTH
+      var splitData = data.slice(offset, offset + BLOCK_LENGTH)
+      this._buffered++
+      this._buffer[i + j] = splitData
+      this.missing -= splitData.length
+      if (this.sources.indexOf(source) === -1) {
+        this.sources.push(source)
+      }
     }
   }
   return this._buffered === this._chunks
