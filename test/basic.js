@@ -2,7 +2,7 @@ var Piece = require('../')
 var test = require('tape')
 
 function makeChunk (value, length) {
-  var buf = new Buffer(length || Piece.BLOCK_LENGTH)
+  var buf = Buffer.alloc(length || Piece.BLOCK_LENGTH)
   buf.fill(value)
   return buf
 }
