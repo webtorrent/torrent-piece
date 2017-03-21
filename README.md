@@ -1,11 +1,13 @@
-# torrent-piece [![travis][travis-image]][travis-url] [![npm][npm-image]][npm-url] [![downloads][downloads-image]][downloads-url]
+# torrent-piece [![travis][travis-image]][travis-url] [![npm][npm-image]][npm-url] [![downloads][downloads-image]][downloads-url] [![javascript style guide][standard-image]][standard-url]
 
-[travis-image]: https://img.shields.io/travis/feross/torrent-piece.svg?style=flat
+[travis-image]: https://img.shields.io/travis/feross/torrent-piece/master.svg
 [travis-url]: https://travis-ci.org/feross/torrent-piece
-[npm-image]: https://img.shields.io/npm/v/torrent-piece.svg?style=flat
+[npm-image]: https://img.shields.io/npm/v/torrent-piece.svg
 [npm-url]: https://npmjs.org/package/torrent-piece
-[downloads-image]: https://img.shields.io/npm/dm/torrent-piece.svg?style=flat
+[downloads-image]: https://img.shields.io/npm/dm/torrent-piece.svg
 [downloads-url]: https://npmjs.org/package/torrent-piece
+[standard-image]: https://img.shields.io/badge/code_style-standard-brightgreen.svg
+[standard-url]: https://standardjs.com
 
 ### Torrent piece abstraction
 
