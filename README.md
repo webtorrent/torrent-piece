@@ -1,7 +1,7 @@
 # torrent-piece [![travis][travis-image]][travis-url] [![npm][npm-image]][npm-url] [![downloads][downloads-image]][downloads-url] [![javascript style guide][standard-image]][standard-url]
 
-[travis-image]: https://img.shields.io/travis/feross/torrent-piece/master.svg
-[travis-url]: https://travis-ci.org/feross/torrent-piece
+[travis-image]: https://img.shields.io/travis/webtorrent/torrent-piece/master.svg
+[travis-url]: https://travis-ci.org/webtorrent/torrent-piece
 [npm-image]: https://img.shields.io/npm/v/torrent-piece.svg
 [npm-url]: https://npmjs.org/package/torrent-piece
 [downloads-image]: https://img.shields.io/npm/dm/torrent-piece.svg
@@ -64,4 +64,4 @@ console.log(pieceBuffer)
 
 ## license
 
-MIT. Copyright (c) [Feross Aboukhadijeh](http://feross.org).
+MIT. Copyright (c) [Feross Aboukhadijeh](https://feross.org) and [WebTorrent, LLC](https://webtorrent.io).
