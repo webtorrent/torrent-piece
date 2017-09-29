@@ -1,6 +1,4 @@
-# torrent-piece [![travis][travis-image]][travis-url] [![npm][npm-image]][npm-url] [![downloads][downloads-image]][downloads-url] [![javascript style guide][standard-image]][standard-url]
-
-[![Greenkeeper badge](https://badges.greenkeeper.io/webtorrent/torrent-piece.svg)](https://greenkeeper.io/)
+# torrent-piece [![travis][travis-image]][travis-url] [![npm][npm-image]][npm-url] [![downloads][downloads-image]][downloads-url] [![javascript style guide][standard-image]][standard-url] [![Greenkeeper badge][greenkeeper-image]][greenkeeper-url]
 
 [travis-image]: https://img.shields.io/travis/webtorrent/torrent-piece/master.svg
 [travis-url]: https://travis-ci.org/webtorrent/torrent-piece
@@ -10,6 +8,8 @@
 [downloads-url]: https://npmjs.org/package/torrent-piece
 [standard-image]: https://img.shields.io/badge/code_style-standard-brightgreen.svg
 [standard-url]: https://standardjs.com
+[greenkeeper-image]: https://badges.greenkeeper.io/webtorrent/torrent-piece.svg
+[greenkeeper-url]: https://greenkeeper.io/
 
 ### Torrent piece abstraction
 
