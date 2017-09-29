@@ -1,5 +1,7 @@
 # torrent-piece [![travis][travis-image]][travis-url] [![npm][npm-image]][npm-url] [![downloads][downloads-image]][downloads-url] [![javascript style guide][standard-image]][standard-url]
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/webtorrent/torrent-piece.svg)](https://greenkeeper.io/)
+
 [travis-image]: https://img.shields.io/travis/webtorrent/torrent-piece/master.svg
 [travis-url]: https://travis-ci.org/webtorrent/torrent-piece
 [npm-image]: https://img.shields.io/npm/v/torrent-piece.svg
