@@ -98,6 +98,6 @@ class Piece {
   }
 }
 
-Piece.BLOCK_LENGTH = BLOCK_LENGTH
+Object.defineProperty(Piece, 'BLOCK_LENGTH', { value: BLOCK_LENGTH })
 
 module.exports = Piece
