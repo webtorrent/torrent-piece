@@ -24,12 +24,12 @@ npm install torrent-piece
 ## usage
 
 ```js
-var Piece = require('torrent-piece')
+const Piece = require('torrent-piece')
 
 Piece.BLOCK_LENGTH // 16384
 
-var pieceLength = Piece.BLOCK_LENGTH * 5
-var piece = new Piece(pieceLength)
+const pieceLength = Piece.BLOCK_LENGTH * 5
+const piece = new Piece(pieceLength)
 piece.missing // 81920
 
 piece.reserve() // 0
@@ -58,7 +58,7 @@ piece.chunkOffset(0) // 0
 piece.reserve() // -1 (signal that all chunks are reserved)
 piece.missing // 0
 
-var pieceBuffer = piece.flush()
+const pieceBuffer = piece.flush()
 console.log(pieceBuffer)
 ```
 

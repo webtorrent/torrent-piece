@@ -1,15 +1,15 @@
-var Piece = require('../')
-var test = require('tape')
+const Piece = require('../')
+const test = require('tape')
 
 function makeChunk (value, length) {
-  var buf = Buffer.alloc(length || Piece.BLOCK_LENGTH)
+  const buf = Buffer.alloc(length || Piece.BLOCK_LENGTH)
   buf.fill(value)
   return buf
 }
 
-test('initial state', function (t) {
-  var length = Piece.BLOCK_LENGTH * 4
-  var piece = new Piece(length)
+test('initial state', t => {
+  const length = Piece.BLOCK_LENGTH * 4
+  const piece = new Piece(length)
 
   t.equal(piece.length, length)
   t.equal(piece.missing, length)
@@ -32,9 +32,9 @@ test('initial state', function (t) {
   t.end()
 })
 
-test('initial state - last chunk is different size', function (t) {
-  var length = (Piece.BLOCK_LENGTH * 3) + 999
-  var piece = new Piece(length)
+test('initial state - last chunk is different size', t => {
+  const length = (Piece.BLOCK_LENGTH * 3) + 999
+  const piece = new Piece(length)
 
   t.equal(piece.length, length)
   t.equal(piece.missing, length)
@@ -57,9 +57,9 @@ test('initial state - last chunk is different size', function (t) {
   t.end()
 })
 
-test('basic usage', function (t) {
-  var length = Piece.BLOCK_LENGTH * 4
-  var piece = new Piece(length)
+test('basic usage', t => {
+  const length = Piece.BLOCK_LENGTH * 4
+  const piece = new Piece(length)
 
   t.notOk(piece.get(0))
   t.equal(piece.reserve(), 0)
@@ -83,22 +83,22 @@ test('basic usage', function (t) {
 
   t.equal(piece.reserve(), -1)
 
-  var completeBuf = Buffer.concat([
+  const completeBuf = Buffer.concat([
     makeChunk('first chunk'),
     makeChunk('second chunk'),
     makeChunk('third chunk'),
     makeChunk('fourth chunk')
   ])
-  var flushedBuf = piece.flush()
+  const flushedBuf = piece.flush()
   t.deepEqual(flushedBuf, completeBuf)
   t.equal(flushedBuf.length, Piece.BLOCK_LENGTH * 4)
 
   t.end()
 })
 
-test('basic usage - last chunk is different size', function (t) {
-  var length = (Piece.BLOCK_LENGTH * 3) + 999
-  var piece = new Piece(length)
+test('basic usage - last chunk is different size', t => {
+  const length = (Piece.BLOCK_LENGTH * 3) + 999
+  const piece = new Piece(length)
 
   t.notOk(piece.get(0))
   t.equal(piece.reserve(), 0)
@@ -122,22 +122,22 @@ test('basic usage - last chunk is different size', function (t) {
 
   t.equal(piece.reserve(), -1)
 
-  var completeBuf = Buffer.concat([
+  const completeBuf = Buffer.concat([
     makeChunk('first chunk'),
     makeChunk('second chunk'),
     makeChunk('third chunk'),
     makeChunk('fourth chunk', 999)
   ])
-  var flushedBuf = piece.flush()
+  const flushedBuf = piece.flush()
   t.deepEqual(flushedBuf, completeBuf)
   t.equal(flushedBuf.length, (Piece.BLOCK_LENGTH * 3) + 999)
 
   t.end()
 })
 
-test('cancel', function (t) {
-  var length = Piece.BLOCK_LENGTH * 4
-  var piece = new Piece(length)
+test('cancel', t => {
+  const length = Piece.BLOCK_LENGTH * 4
+  const piece = new Piece(length)
 
   t.equal(piece.reserve(), 0)
   t.equal(piece.reserve(), 1)
