@@ -36,8 +36,11 @@ class Piece {
 
   reserveRemaining () {
     if (!this.init()) return -1
-    if (this._reservations < this._chunks) {
-      const min = this._reservations
+    if (this._cancellations.length || this._reservations < this._chunks) {
+      let min = this._reservations
+      while (this._cancellations.length) {
+        min = Math.min(min, this._cancellations.pop())
+      }
       this._reservations = this._chunks
       return min
     }
