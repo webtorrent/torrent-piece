@@ -10,7 +10,6 @@
   "bugs": {
     "url": "https://github.com/webtorrent/torrent-piece/issues"
   },
-  "dependencies": {},
   "devDependencies": {
     "airtap": "^3.0.0",
     "standard": "*",
