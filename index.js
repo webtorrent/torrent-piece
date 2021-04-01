@@ -1,3 +1,4 @@
+/*! torrent-piece. MIT License. WebTorrent LLC <https://webtorrent.io/opensource> */
 const BLOCK_LENGTH = 1 << 14
 
 class Piece {
