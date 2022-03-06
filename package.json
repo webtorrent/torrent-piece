@@ -13,7 +13,7 @@
   "devDependencies": {
     "airtap": "4.0.3",
     "standard": "*",
-    "tape": "5.3.1"
+    "tape": "5.5.2"
   },
   "keywords": [
     "torrent",
