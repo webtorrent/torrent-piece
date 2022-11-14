@@ -1,5 +1,5 @@
-const Piece = require('../')
-const test = require('tape')
+import Piece from '../index.js'
+import test from 'tape'
 
 function makeChunk (value, length) {
   const buf = Buffer.alloc(length || Piece.BLOCK_LENGTH)
