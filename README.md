@@ -24,7 +24,7 @@ npm install torrent-piece
 ## usage
 
 ```js
-const Piece = require('torrent-piece')
+import Piece from 'torrent-piece'
 
 Piece.BLOCK_LENGTH // 16384
 

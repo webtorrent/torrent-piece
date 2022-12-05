@@ -104,4 +104,4 @@ class Piece {
 
 Object.defineProperty(Piece, 'BLOCK_LENGTH', { value: BLOCK_LENGTH })
 
-module.exports = Piece
+export default Piece

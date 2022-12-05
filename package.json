@@ -10,10 +10,17 @@
   "bugs": {
     "url": "https://github.com/webtorrent/torrent-piece/issues"
   },
+  "type": "module",
   "devDependencies": {
     "airtap": "4.0.3",
     "standard": "*",
     "tape": "5.6.1"
+  },
+  "engines": {
+    "node": ">=12.20.0"
+  },
+  "exports": {
+    "import": "./index.js"
   },
   "keywords": [
     "torrent",
@@ -25,7 +32,6 @@
     "bittorrent"
   ],
   "license": "MIT",
-  "main": "index.js",
   "repository": {
     "type": "git",
     "url": "git://github.com/webtorrent/torrent-piece.git"
