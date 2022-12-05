@@ -16,6 +16,12 @@
     "standard": "*",
     "tape": "5.6.1"
   },
+  "engines": {
+    "node": ">=12.20.0"
+  },
+  "exports": {
+    "import": "./index.js"
+  },
   "keywords": [
     "torrent",
     "piece",
@@ -26,7 +32,6 @@
     "bittorrent"
   ],
   "license": "MIT",
-  "main": "index.js",
   "repository": {
     "type": "git",
     "url": "git://github.com/webtorrent/torrent-piece.git"
