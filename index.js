@@ -1,7 +1,9 @@
 /*! torrent-piece. MIT License. WebTorrent LLC <https://webtorrent.io/opensource> */
+import { concat } from 'uint8-util'
+
 const BLOCK_LENGTH = 1 << 14
 
-class Piece {
+export default class Piece {
   constructor (length) {
     this.length = length
     this.missing = length
@@ -84,7 +86,7 @@ class Piece {
 
   flush () {
     if (!this._buffer || this._chunks !== this._buffered) return null
-    const buffer = Buffer.concat(this._buffer, this.length)
+    const buffer = concat(this._buffer, this.length)
     this._buffer = null
     this._cancellations = null
     this.sources = null
@@ -102,6 +104,4 @@ class Piece {
   }
 }
 
-Object.defineProperty(Piece, 'BLOCK_LENGTH', { value: BLOCK_LENGTH })
-
-export default Piece
+Piece.BLOCK_LENGTH = BLOCK_LENGTH

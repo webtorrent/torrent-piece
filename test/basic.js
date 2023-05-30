@@ -90,7 +90,7 @@ test('basic usage', t => {
     makeChunk('fourth chunk')
   ])
   const flushedBuf = piece.flush()
-  t.deepEqual(flushedBuf, completeBuf)
+  t.deepEqual(Buffer.from(flushedBuf), completeBuf)
   t.equal(flushedBuf.length, Piece.BLOCK_LENGTH * 4)
 
   t.end()
@@ -129,7 +129,7 @@ test('basic usage - last chunk is different size', t => {
     makeChunk('fourth chunk', 999)
   ])
   const flushedBuf = piece.flush()
-  t.deepEqual(flushedBuf, completeBuf)
+  t.deepEqual(Buffer.from(flushedBuf), completeBuf)
   t.equal(flushedBuf.length, (Piece.BLOCK_LENGTH * 3) + 999)
 
   t.end()
