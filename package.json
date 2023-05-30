@@ -60,5 +60,8 @@
     "extends": [
       "github>webtorrent/renovate-config"
     ]
+  },
+  "dependencies": {
+    "uint8-util": "^2.1.9"
   }
 }
