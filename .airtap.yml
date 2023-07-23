@@ -1,14 +1,22 @@
-loopback: airtap.local
 browsers:
   - name: chrome
     version: latest
   - name: firefox
     version: latest
-  - name: safari
+  - name: edge
     version: latest
-  - name: microsoftedge
+  - name: and_chr
     version: latest
-  - name: iphone
+  - name: ios_saf
     version: latest
-  - name: android
-    version: latest
+providers:
+  - airtap-system
+presets:
+  local:
+    providers: airtap-manual
+    browsers:
+      - name: manual
+browserify:
+  - transform: babelify
+    global: true
+    presets: ['@babel/preset-env']
