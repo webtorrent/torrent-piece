@@ -12,8 +12,13 @@
   },
   "type": "module",
   "devDependencies": {
-    "airtap": "4.0.3",
+    "@babel/preset-env": "^7.22.9",
+    "airtap": "4.0.4",
+    "airtap-manual": "^1.0.0",
+    "airtap-system": "^0.1.0",
+    "babelify": "^10.0.0",
     "standard": "*",
+    "tap-spec": "^5.0.0",
     "tape": "5.6.1"
   },
   "engines": {
@@ -38,8 +43,8 @@
   },
   "scripts": {
     "test": "standard && npm run test-node && npm run test-browser",
-    "test-browser": "airtap -- test/*.js",
-    "test-browser-local": "airtap --local -- test/*.js",
+    "test-browser": "airtap --concurrency 1 --all -- test/*.js | tap-spec",
+    "test-browser-local": "airtap --preset local -- test/*.js | tap-spec",
     "test-node": "tape test/*.js"
   },
   "funding": [
