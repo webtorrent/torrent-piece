@@ -72,7 +72,7 @@ export default class Piece {
     for (let j = 0; j < blocks; j++) {
       if (!this._buffer[i + j]) {
         const offset = j * BLOCK_LENGTH
-        const splitData = data.slice(offset, offset + BLOCK_LENGTH)
+        const splitData = data.subarray(offset, offset + BLOCK_LENGTH)
         this._buffered++
         this._buffer[i + j] = splitData
         this.missing -= splitData.length
