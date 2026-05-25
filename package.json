@@ -11,6 +11,9 @@
     "url": "https://github.com/webtorrent/torrent-piece/issues"
   },
   "type": "module",
+  "dependencies": {
+    "uint8-util": "^2.1.9"
+  },
   "devDependencies": {
     "@babel/preset-env": "^7.22.9",
     "airtap": "5.0.0",
@@ -66,7 +69,7 @@
       "github>webtorrent/renovate-config"
     ]
   },
-  "dependencies": {
-    "uint8-util": "^2.1.9"
+  "release": {
+    "extends": "@webtorrent/semantic-release-config"
   }
 }
