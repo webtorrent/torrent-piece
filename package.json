@@ -13,7 +13,7 @@
   "type": "module",
   "devDependencies": {
     "@babel/preset-env": "^7.22.9",
-    "airtap": "4.0.4",
+    "airtap": "5.0.0",
     "airtap-manual": "^1.0.0",
     "airtap-system": "^0.1.0",
     "babelify": "^10.0.0",
